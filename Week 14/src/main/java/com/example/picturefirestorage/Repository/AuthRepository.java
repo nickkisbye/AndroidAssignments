@@ -24,7 +24,10 @@ public class AuthRepository {
     public AuthRepository() {
         firebaseAuth = FirebaseAuth.getInstance();
     }
-
+    
+    /**
+    Checks if the user is logged in or not. If the check is successful, onLoginSucess will be called.
+    */
     private void checkCredentials() {
         firebaseAuth.addIdTokenListener(new FirebaseAuth.IdTokenListener() {
             @Override
@@ -39,6 +42,10 @@ public class AuthRepository {
         });
     }
 
+    /**
+    Takes the input from the login fields and authenticates the user. 
+    If no user is found, login will fail. If user is found, onLoginSuccess will be called
+    */
     public void signUserIn(String email, String password, final MainActivity mainActivity) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(mainActivity, new OnCompleteListener<AuthResult>() {
@@ -53,6 +60,9 @@ public class AuthRepository {
                 });
     }
 
+    /**
+    Signs the user out and removes the token
+    */
     public void signUserOut() {
         firebaseAuth.signOut();
     }
