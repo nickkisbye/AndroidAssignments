@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             presentFragment(R.id.phoneframeId, listFragment); // Inserts the listFragment (i.e listlayout.xml) into phoneframeId
         } else {
             isTablet = true;
-            //Creates a detailFragment with the start text "Welcome"
+            //Creates a detailFragment with the start text "This is a detail view"
             detailFragment = DetailFragment.newInstance("This is a detail view");
             // Displays the listFragment and the detailFragment on tablet.
             presentFragment(R.id.frameLayoutTabletList, listFragment); // Insert the listFragment (i.e listlayout.xml) into frameLayoutTabletList
