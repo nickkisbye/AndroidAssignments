@@ -52,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
              * If the device is a tablet, we simply "replace" the detail fragment content everytime
              * we click on an item.
             */
-            detailFragment = DetailFragment.newInstance(item); // inflate a textView with the item (a string)
+            detailFragment = DetailFragment.newInstance(item); 
+            // creates a detailFragment with the "item" string. The item text is set to the textView inside the detailFragment.
+
             presentFragment(R.id.framLayoutTabletDetail, detailFragment);
         } else {
             /**
